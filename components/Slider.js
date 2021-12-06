@@ -129,7 +129,7 @@ const Slider = () => {
           <Slide bg={item.bg} key={item.id}>
             {console.log(item.img.src)}
             <ImgContainer>
-              <Image src={item.img.src} />
+              <Image src={item.img.src} alt="image" />
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>

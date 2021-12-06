@@ -9,7 +9,11 @@ const Product = () => {
       <Wrapper>
         <ImgContainer>
           <ImgDiv>
-            <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" layout="fill" />
+            <Image
+              src="https://i.ibb.co/S6qMxwr/jean.jpg"
+              layout="fill"
+              alt="image"
+            />
           </ImgDiv>
         </ImgContainer>
         <InfoContainer>

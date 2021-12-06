@@ -12,7 +12,7 @@ const Navbar = () => {
             <Logo>el Cart.</Logo>
           </Left>
           <Center>
-            <Language>India's Fashion Expert</Language>
+            <Language>India&apos;s Fashion Expert</Language>
           </Center>
           <Right>
             <MenuItem>REGISTER</MenuItem>
