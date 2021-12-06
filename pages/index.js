@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
-import Announcement from "../components/Announcement";
-import Navbar from "../components/Navbar";
+import Categories from "../components/Categories";
+import Newsletter from "../components/Newsletter";
 import Slider from "../components/Slider";
 
 export default function Home() {
@@ -13,9 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Announcement />
-      <Navbar />
       <Slider />
+      <Categories />
+      <Newsletter />
     </div>
   );
 }

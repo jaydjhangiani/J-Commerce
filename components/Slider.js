@@ -1,7 +1,8 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import { useState } from "react";
 import styled from "styled-components";
-import { sliderItems } from "../data";
+import { sliderItems } from "../assets/data";
+import { mobile, tablet } from "../utils/responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -9,7 +10,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  /* ${mobile({ display: "none" })} */
+  ${tablet({ height: "100%" })}
 `;
 
 const Arrow = styled.div`
@@ -34,34 +35,64 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
+  ${tablet({
+    flexDirection: "column",
+  })}
+  ${mobile({
+    // width: "100%",
+    flexDirection: "column",
+  })}
 `;
 
 const ImgContainer = styled.div`
+  display: flex;
   height: 100%;
   flex: 1;
 `;
 
 const Image = styled.img`
+  display: flex;
   height: 80%;
+  width: 80%;
+  margin: 0 auto;
+  ${mobile({
+    width: "100%",
+    padding: "10px",
+    marginTop: "15px",
+  })}
 `;
 
 const InfoContainer = styled.div`
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  justify-content: center;
   padding: 50px;
+  ${mobile({
+    padding: "20px",
+  })}
 `;
 
 const Title = styled.h1`
   font-size: 70px;
+  ${tablet({
+    fontSize: "50px",
+  })}
+  ${mobile({
+    fontSize: "2rem",
+  })}
 `;
 
 const Desc = styled.p`
@@ -96,8 +127,9 @@ const Slider = () => {
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
+            {console.log(item.img.src)}
             <ImgContainer>
-              <Image src={item.img} />
+              <Image src={item.img.src} />
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
