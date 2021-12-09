@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 
 const Layout = ({ children }) => {
   const router = useRouter();
-  console.log(router.route);
   return (
     <div>
       <Navbar />

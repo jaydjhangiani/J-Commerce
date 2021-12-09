@@ -1,6 +1,6 @@
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
-import { mobile } from "../utils/responsive";
+import { mobile, tablet } from "../utils/responsive";
 
 const Cart = () => {
   return (
@@ -9,11 +9,14 @@ const Cart = () => {
         <Title>YOUR BAG</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist (0)</TopText>
-          </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
+        </Top>
+        <Top>
+          <TopTexts>
+            <TopText>
+              Shopping Bag <b>(2)</b>
+            </TopText>
+          </TopTexts>
         </Top>
         <Bottom>
           <Info>
@@ -114,10 +117,7 @@ const Cart = () => {
               <SummaryItemText>Estimated Shipping</SummaryItemText>
               <SummaryItemPrice>$ 5.90</SummaryItemPrice>
             </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
-            </SummaryItem>
+
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
@@ -149,24 +149,26 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  ${mobile({ padding: "20px 0px" })}
 `;
 
 const TopButton = styled.button`
   padding: 10px;
   font-weight: 600;
+  margin: 0 50px;
+  flex: 1;
   cursor: pointer;
-  border: ${(props) => props.type === "filled" && "none"};
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
   color: ${(props) => props.type === "filled" && "white"};
+  ${tablet({ padding: "10px 5px", margin: "0px 5px" })}
 `;
 
 const TopTexts = styled.div`
-  ${mobile({ display: "none" })}
+  margin: 0 auto;
 `;
 
 const TopText = styled.span`
-  text-decoration: underline;
   cursor: pointer;
   margin: 0px 10px;
 `;
@@ -174,7 +176,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
-  ${mobile({ flexDirection: "column" })}
+  ${tablet({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`

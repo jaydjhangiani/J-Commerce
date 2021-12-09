@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Badge, IconButton } from "@material-ui/core";
 import { CameraAlt, Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { mobile, tablet } from "../utils/responsive";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -9,19 +10,27 @@ const Navbar = () => {
       <Wrappper>
         <FirstRow>
           <Left>
-            <Logo>el Cart.</Logo>
+            <Link href="/">
+              <Logo style={{ cursor: "pointer" }}>el Cart.</Logo>
+            </Link>
           </Left>
           <Center>
             <Language>India&apos;s Fashion Expert</Language>
           </Center>
           <Right>
-            <MenuItem>REGISTER</MenuItem>
-            <MenuItem>LOGIN</MenuItem>
+            <MenuItem>
+              <Link href="/register">REGISTER</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link href="/login">LOGIN</Link>
+            </MenuItem>
 
             <MenuItem>
-              <Badge badgeContent={4} color="primary">
-                <ShoppingCartOutlined />
-              </Badge>
+              <Link href="/cart">
+                <Badge badgeContent={4} color="primary">
+                  <ShoppingCartOutlined />
+                </Badge>
+              </Link>
             </MenuItem>
           </Right>
         </FirstRow>

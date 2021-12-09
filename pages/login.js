@@ -6,24 +6,16 @@ const Register = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
+        <Title>LOGIN TO YOUR ACCOUNT</Title>
         <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
-          <Input placeholder="username" />
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Input placeholder="confirm password" />
+          <Input placeholder="Email" />
+          <Input placeholder="Password" />
+          <Button>LOGIN</Button>
           <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
-          <Button>CREATE</Button>
-          <Agreement>
-            Have an account?{" "}
-            <Link href="/login">
+            Don&apos;t have an account?{" "}
+            <Link href="/register">
               <u style={{ cursor: "pointer" }}>
-                <b>LOGIN HERE!</b>
+                <b>REGISTER HERE!</b>
               </u>
             </Link>
           </Agreement>
@@ -42,7 +34,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("/register.jpg/") center;
+    url("/login.jpg/") center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -51,11 +43,11 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 40%;
-  padding: 20px;
+  padding: 30px 40px;
   background-color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   border-radius: 15px;
-  ${tablet({ width: "70%" })}
+  ${tablet({ width: "75%", padding: "20px" })}
   ${mobile({ width: "90%" })}
 `;
 
@@ -66,13 +58,14 @@ const Title = styled.h1`
 
 const Form = styled.form`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 `;
 
 const Input = styled.input`
   flex: 1;
   min-width: 40%;
-  margin: 20px 10px 0px 0px;
+  margin: 20px 0px 0px 0px;
   padding: 10px;
 `;
 
@@ -85,8 +78,9 @@ const Button = styled.button`
   width: 100%;
   border: none;
   padding: 15px 20px;
-  border-radius: 5px;
+  margin: 20px auto 0px auto;
   background-color: teal;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
 `;

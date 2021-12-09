@@ -7,7 +7,7 @@ const CategoryItem = ({ item }) => {
     <Container>
       <ImageDiv>
         <Image
-          src={item.img}
+          src={item.img.src}
           alt={item.title}
           objectFit="cover"
           layout="fill"
@@ -33,6 +33,7 @@ const ImageDiv = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  opacity: 0.95;
   ${tablet({ height: "30vh" })}
   ${mobile({ height: "50vh" })}
 `;
